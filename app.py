@@ -24,7 +24,7 @@ app.config['JWT_REFRESH_TOKEN_EXPIRES'] = datetime.timedelta(hours=24)
 db = SQLAlchemy(app)
 bcrypt = Bcrypt(app)
 jwt = JWTManager(app)
-CORS(app, resources={r"/*":{"origins": ["http://localhost:5173","https://bulc-react-9c55.vercel.app/"]}},supports_credentials=True)
+CORS(app, resources={r"/*":{"origins": ["http://localhost:5173","https://bulc.netlify.app"]}},supports_credentials=True)
 
 class User(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -184,3 +184,4 @@ def get_all_users():
 
 if __name__ == '__main__':
     app.run(debug=True)
+
